@@ -1,0 +1,59 @@
+package com.cobakedua;
+
+import java.util.ArrayList;
+
+class DataRoom{
+    private String name;
+    private int stock;
+    private long price;
+
+    DataRoom(String name, int stock, long price){
+        this.name = name;
+        this.stock = stock;
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public long getPrice() {
+        return price;
+    }
+}
+
+class ShowData{
+    ArrayList<DataRoom>  show;
+
+    ShowData(){
+        show = new ArrayList<DataRoom>();
+    }
+
+    public void setData(String name, int stock, long price){
+        show.add(new DataRoom(name,stock,price));
+    }
+
+    public void display(){
+        for ( DataRoom dataRoom : show ) {
+            System.out.println("Car Name\t: " + dataRoom.getName());
+            System.out.println("Car Stock\t: " + dataRoom.getStock());
+            System.out.println("Car Price\t: " + dataRoom.getPrice());
+        }
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ShowData object = new ShowData();
+
+        object.setData("Kijang inova",12,350000000);
+        object.setData("Daihatsu",13,190000000);
+        object.setData("Avanza",15,205000000);
+
+    }
+}
